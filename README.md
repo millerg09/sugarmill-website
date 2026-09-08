@@ -2,7 +2,7 @@
 
 Single-page site for Sugar Mill Music, a home recording studio in Manhattan.
 Plain HTML/CSS, no build step, hosted free on GitHub Pages at
-[sugarmillmusic.com](https://sugarmillmusic.com).
+[sugarmillmusic.net](https://sugarmillmusic.net).
 
 ## Working on it locally
 
@@ -65,25 +65,35 @@ it locally, then merge to `main` when it looks right.
 1. In the repo, go to **Settings → Pages**.
 2. Under **Build and deployment**, set source to **Deploy from a branch**,
    branch `main`, folder `/ (root)`. Save.
-3. Under **Custom domain**, enter `sugarmillmusic.com` and save. (This repo
+3. Under **Custom domain**, enter `sugarmillmusic.net` and save. (This repo
    already includes a `CNAME` file with that domain, so GitHub should pick
    it up automatically — the settings field just confirms it.)
 
-### 3. Point the domain at GitHub (in GoDaddy DNS)
+### 3. Point the domain at GitHub (in Wix DNS)
 
-In GoDaddy's DNS management for `sugarmillmusic.com`:
+The domain is registered through Wix, not GoDaddy — Wix lets you edit DNS
+records directly without changing nameservers, which is actually simpler
+than the GoDaddy path in the original plan.
 
-| Type  | Name | Value                     |
-|-------|------|---------------------------|
-| A     | @    | 185.199.108.153           |
-| A     | @    | 185.199.109.153           |
-| A     | @    | 185.199.110.153           |
-| A     | @    | 185.199.111.153           |
-| CNAME | www  | `millerg09.github.io.`   |
+1. In Wix, go to **Domains**, click the **Domain Actions** icon next to
+   `sugarmillmusic.net`, and choose **Manage DNS Records**.
+2. **Delete Wix's default A and CNAME records first** — Wix auto-creates
+   records pointing at Wix hosting when you register a domain, and they'll
+   conflict with the ones below.
+3. Add these records:
 
-Remove any default GoDaddy parking A/CNAME records first — they'll
-conflict. DNS changes can take anywhere from a few minutes to ~48 hours
-to propagate.
+   | Record type | Host Name       | Value                    |
+   |--------------|-----------------|--------------------------|
+   | A            | *(leave blank — represents `@`/root)* | 185.199.108.153 |
+   | A            | *(leave blank)* | 185.199.109.153          |
+   | A            | *(leave blank)* | 185.199.110.153          |
+   | A            | *(leave blank)* | 185.199.111.153          |
+   | CNAME        | www             | `millerg09.github.io`    |
+
+Wix's "Host Name" field represents the root domain by being left empty,
+not by typing `@` — typing `@` literally will create the wrong record.
+DNS changes can take anywhere from a few minutes to ~48 hours to
+propagate.
 
 ### 4. Enforce HTTPS
 

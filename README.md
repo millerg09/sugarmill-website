@@ -20,8 +20,6 @@ then visit `http://localhost:8000`.
 
 - **Copy** — hero tagline, about paragraph, services list, contact intro.
   Marked with `<!-- PLACEHOLDER COPY -->` comments in `index.html`.
-- **Spotify playlist** — in the `#listen` section, replace `PLAYLIST_ID` in
-  the iframe `src` with your playlist's ID (from its Spotify share link).
 - **Images** — `images/` holds the real photos once you have them. Swap the
   two `.placeholder-box` divs (recording desk, headshot) in `index.html`
   for `<img src="images/your-file.jpg" alt="...">`.

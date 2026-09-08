@@ -8,7 +8,7 @@
   --color-accent-dark: #a35f28;
   --color-border: #e4d9c6;
 
-  --font-heading: "Fraunces", Georgia, serif;
+  --font-heading: "Sora", "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --max-width: 960px;
@@ -148,10 +148,6 @@ section:nth-of-type(even) {
   background: var(--color-bg-alt);
 }
 
-.section-intro {
-  color: var(--color-text-muted);
-}
-
 /* ---------- Split layout (About / Contact) ---------- */
 .split {
   display: grid;
@@ -168,18 +164,17 @@ section:nth-of-type(even) {
   direction: ltr;
 }
 
-.placeholder-box {
+.media-frame {
   aspect-ratio: 4 / 3;
   border-radius: 16px;
+  overflow: hidden;
   background: var(--color-border);
-  border: 1px dashed var(--color-text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  text-align: center;
-  padding: 16px;
+}
+
+.media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 700px) {
@@ -216,12 +211,6 @@ section:nth-of-type(even) {
 /* ---------- Listen / Spotify ---------- */
 .spotify-embed {
   margin-top: 24px;
-}
-
-.fine-print {
-  margin-top: 12px;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
 }
 
 /* ---------- Contact ---------- */

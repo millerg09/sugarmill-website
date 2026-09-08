@@ -1,0 +1,54 @@
+project_kickoff.txt
+
+You are my software engineer and partner in building a basic, single page, HTML-based webpage for my music production side gig. I want to be able to use an existing domain I have at GoDaddy (sugarmillmusic.com) and I want to be able to use GitHub's free page hosting service. Please read the rest of this requirements kickoff file, the step by step guide proposed by Gemini and then ask me any questions you need for clarification before we get started.
+
+Requirements
+
+1) The page must be compliant with Free Pages on GitHub
+2) The page should be a simple, single-page website with very few extras and add-ons
+3) The page must display text describing my services (I will provide those when we're ready)
+4) The page must be able to display a Spotify embed widget, which will be a playlist of my curated portfolio. We should ensure this can play "anonymously" without ads for visitors to my website
+5) While not required, if the page can support a few images that would be a nice to have. Small format photos of my recording desk and my headshot (I will provide those when we're ready)
+6) The style of the website should be basic, modern, clean and friendly. It's a down to earth recording space designed for the beginner singer-songwriter in Manhattan. It's not overly cool like Brooklyn studios. It's not large, it's a single room bedroom. I will provide copy for text where needed. While not single page, we can reference my friend's studio website as inspiration (https://masonjarmusic.com/)
+7) The website should be able to link to my social media (which doesn't exist yet, but I will provide)
+8) The website should be able to display my email (which I believe exists, but I'll provide it. For now I think sugarmillmusic@gmail.com is a fine substitute). I do not want email bots to be able to easily scrape my email, so it's also OK to suggest a better solution than listing the string of the email
+9) The source code needs to be potentially updatable on Github. Please propose a development and deployment paradigm so that I can faciltate source-replace style updates to production, while keeping version history in Github in the event of catastrophe
+10) we will need to connect the domain from GoDaddy to GitHub pages.
+
+Gemini suggested this, but please feel free to adapt your own tech approach as you see fit
+
+Step-by-Step Guide: Hosting a GoDaddy Domain on GitHub Pages
+This guide outlines how to launch a single-page static website using a domain registered at GoDaddy and free hosting through GitHub Pages.
+Phase 1: Set Up Your GitHub Repository
+Log into your GitHub account and click the + icon in the top-right corner, then select New repository.
+Name the repository (e.g., music-portfolio). Keep the repository setting as Public (required for free accounts using GitHub Pages).
+Check the box to Add a README file, then click Create repository.
+Phase 2: Upload Your Website Files
+Inside your new repository, click Add file > Create new file.
+Name the file exactly index.html.
+Paste your HTML code (including any third-party Spotify or SoundCloud embed widgets) into the editor.
+Scroll to the bottom and click Commit changes to save the file directly to your main branch.
+(Optional) Repeat this process to create a style.css file if your design requires separate styling.
+Phase 3: Configure GitHub Pages & Custom Domain
+In your repository, click the Settings tab (the gear icon along the top menu).
+On the left sidebar, scroll down to the "Code and automation" section and click Pages.
+Under Build and deployment, ensure the source is set to Deploy from a branch. Under Branch, select main and / (root), then click Save.
+Scroll down to the Custom domain section. Type your domain (e.g., yourdomain.com) into the box and click Save. This creates a file named CNAME in your repository automatically.
+Phase 4: Configure DNS Records at GoDaddy
+Log into your GoDaddy Control Panel and navigate to your Domain Portfolio, then click on your domain to open DNS Management.
+Add the A Records: You need to point your root domain to GitHub’s apex servers. Add four separate records with the following details:
+Type: A | Name: @ | Value: 185.199.108.153
+Type: A | Name: @ | Value: 185.199.109.153
+Type: A | Name: @ | Value: 185.199.110.153
+Type: A | Name: @ | Value: 185.199.111.153
+Add the CNAME Record: This directs your www subdomain to your GitHub domain name.
+Type: CNAME | Name: www | Value: yourusername.github.io. (Replace with your exact GitHub username and ensure the trailing dot is included if GoDaddy requires it).
+Delete any conflicting default A or CNAME records that point to GoDaddy placeholders.
+Phase 5: Enforce Secure HTTPS
+Return to your GitHub repository Settings > Pages dashboard.
+Wait a few minutes for the DNS changes to propagate worldwide and for GitHub to issue your free SSL certificate.
+Check the box for Enforce HTTPS once it becomes clickable. Your site is now live and secure.
+
+--
+
+Please ask me any open questions. And then let's get started

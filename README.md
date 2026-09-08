@@ -50,15 +50,13 @@ it locally, then merge to `main` when it looks right.
 
 ### 1. Create the GitHub repo
 
-1. On GitHub, create a new **public** repository (Pages' free tier
-   requires public for personal accounts).
+1. On GitHub (account `millerg09`), create a new **public** repository
+   (Pages' free tier requires public for personal accounts). This folder
+   is already a git repo with an initial commit, so no `git init` needed.
 2. From this folder:
    ```
-   git init
-   git add .
-   git commit -m "Initial site scaffold"
    git branch -M main
-   git remote add origin https://github.com/<your-username>/<repo-name>.git
+   git remote add origin https://github.com/millerg09/<repo-name>.git
    git push -u origin main
    ```
 
@@ -81,7 +79,7 @@ In GoDaddy's DNS management for `sugarmillmusic.com`:
 | A     | @    | 185.199.109.153           |
 | A     | @    | 185.199.110.153           |
 | A     | @    | 185.199.111.153           |
-| CNAME | www  | `<your-username>.github.io.` |
+| CNAME | www  | `millerg09.github.io.`   |
 
 Remove any default GoDaddy parking A/CNAME records first — they'll
 conflict. DNS changes can take anywhere from a few minutes to ~48 hours

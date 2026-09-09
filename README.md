@@ -2,7 +2,9 @@
 
 Single-page site for Sugar Mill Music, a home recording studio in Manhattan.
 Plain HTML/CSS, no build step, hosted free on GitHub Pages at
-[sugarmillmusic.net](https://sugarmillmusic.net).
+[sugarmillmusic.net](https://sugarmillmusic.net) — **live as of 2026-09-08.**
+
+See [PROGRESS.md](PROGRESS.md) for current status and open follow-ups.
 
 ## Working on it locally
 
@@ -18,15 +20,17 @@ then visit `http://localhost:8000`.
 
 ## What's still placeholder
 
-- **Copy** — hero tagline, about paragraph, services list, contact intro.
-  Marked with `<!-- PLACEHOLDER COPY -->` comments in `index.html`.
-- **Images** — `images/` holds the real photos once you have them. Swap the
-  two `.placeholder-box` divs (recording desk, headshot) in `index.html`
-  for `<img src="images/your-file.jpg" alt="...">`.
-- **Social links** — `href="#"` placeholders in the contact section; drop
-  in real profile URLs once accounts exist.
-- **Email** — shown as plain text (`sugarmillmusic at gmail dot com`) to
-  keep it off scraper radars. No link, no JS needed.
+- **Contact intro line** — the one remaining `<!-- PLACEHOLDER COPY -->`
+  comment in `index.html`, in the `#contact` section.
+- **Photos** — `images/sugarmill_desk.jpg` and `images/sugarmill_headshot.jpg`
+  are real files, but placeholder-quality. Drop in better ones under the
+  same filenames whenever they're ready — no code changes needed.
+- **Social links** — only Instagram is linked so far. Add more `<a>` tags
+  to `.social-links` in `index.html` as other accounts exist.
+
+Email is intentionally final as-is: shown as plain text
+(`sugarmillmusic at gmail dot com`) to keep it off scraper radars, no
+link or JS needed.
 
 ## Deployment workflow
 
@@ -46,7 +50,10 @@ That's it — no staging environment, no separate build. If you want to
 preview a bigger change before it's live, make the edits on a branch, view
 it locally, then merge to `main` when it looks right.
 
-## One-time setup (do this once)
+## One-time setup (already done — kept for reference)
+
+This has already been completed for this repo/domain. Kept here in case
+the site is ever migrated to a new repo, domain, or GitHub account.
 
 ### 1. Create the GitHub repo
 
